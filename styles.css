@@ -574,18 +574,16 @@ body {
 @media (max-width: 768px) {
     .layout-grid { grid-template-columns: 1fr; gap: 40px; }
     
-    /* --- Mobile Responsiveness --- */
-@media (max-width: 768px) {
-    .layout-grid { grid-template-columns: 1fr; gap: 40px; }
-    
-    /* 1. The Premium Mobile Nav Card */
+    /* 1. The Premium Mobile Nav Card (Now with cinematic transitions) */
     .glass-nav { 
         flex-direction: column; 
         padding: 24px 16px 20px; 
-        border-radius: 16px; /* A sleek, rounded rectangle */
+        border-radius: 16px; 
         width: 92%;
         top: 16px;
         gap: 16px;
+        transition: all 0.6s var(--ease-out-expo);
+        overflow: hidden; /* Crucial: hides the links as the box shrinks */
     }
     
     /* Force the logo to the top row */
@@ -597,6 +595,7 @@ body {
         font-size: 1.75rem; 
         text-align: center;
         width: 100%;
+        transition: font-size 0.6s var(--ease-out-expo);
     }
     
     /* Second row: Menu & Ambience */
@@ -606,6 +605,9 @@ body {
         justify-content: center; 
         gap: 24px;
         width: 100%;
+        max-height: 50px;
+        opacity: 1;
+        transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.4s ease;
     }
     
     /* Third row: Events & Reserve */
@@ -615,14 +617,37 @@ body {
         justify-content: center; 
         gap: 24px;
         width: 100%;
-        margin-top: -4px; /* Tucks the rows elegantly together */
+        margin-top: -4px;
+        max-height: 50px;
+        opacity: 1;
+        transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.4s ease;
     }
     
-    /* Bring all links back and style them */
     .nav-links a, .nav-links.right a { 
         margin-right: 0; 
         font-size: 0.75rem; 
         display: block !important; 
+    }
+
+    /* --- THE MAGIC SCROLLED STATE (The Capsule) --- */
+    .glass-nav.nav-scrolled {
+        width: 140px; /* Just wide enough for the logo */
+        padding: 12px 0; /* Shrinks the height */
+        border-radius: 100px; /* Morphs back into a perfect pill */
+        gap: 0;
+    }
+
+    .glass-nav.nav-scrolled .logo {
+        font-size: 1.25rem; /* Shrinks the logo slightly */
+    }
+
+    /* Elegant disappearance of the links */
+    .glass-nav.nav-scrolled .nav-links,
+    .glass-nav.nav-scrolled .nav-links.right {
+        max-height: 0;
+        opacity: 0;
+        margin-top: 0;
+        pointer-events: none;
     }
     
     /* 2. Center the Hero Section for Mobile */
@@ -648,20 +673,8 @@ body {
         transform: translateY(0); 
     }
     
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-    }
-    .footer-links {
-        flex-direction: column;
-        gap: 40px;
-    }
-    .footer-bottom {
-        flex-direction: column;
-        gap: 24px;
-        text-align: center;
-    }
-    .footer-legal a {
-        margin: 0 12px;
-    }
+    .footer-grid { grid-template-columns: 1fr; gap: 48px; }
+    .footer-links { flex-direction: column; gap: 40px; }
+    .footer-bottom { flex-direction: column; gap: 24px; text-align: center; }
+    .footer-legal a { margin: 0 12px; }
 }
