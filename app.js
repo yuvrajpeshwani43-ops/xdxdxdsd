@@ -6,31 +6,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroImage = document.querySelector('.hero-image-wrapper');
     const conceptPill = document.querySelector('.concept-pill');
 
-    // Step 1: Reveal the text inside the black box immediately
     setTimeout(() => {
         if(preloaderText) preloaderText.classList.add('reveal');
     }, 100);
 
     window.addEventListener('load', () => {
-        // Step 2: Slide the whole black box up to reveal the site
         setTimeout(() => {
             preloader.classList.add('slide-up');
-            if (heroImage) heroImage.style.transform = 'scale(1)'; // Settle the image
+            if (heroImage) heroImage.style.transform = 'scale(1)'; 
             
-            // Step 3: Trigger cinematic text reveals
             setTimeout(() => {
                 document.querySelectorAll('.reveal-up, .fade-in').forEach(el => {
                     el.classList.add('is-visible');
                 });
-                // Ensure the concept pill fades in if it exists (desktop only via css opacity check)
-                if(conceptPill && window.innerWidth > 768) {
+                // Unlocked for mobile: Pill fades in gracefully
+                if(conceptPill) {
                     conceptPill.style.opacity = '1';
                 }
             }, 600);
             
-            // Remove preloader from DOM after slide finishes
             setTimeout(() => { preloader.style.display = 'none'; }, 1200);
-        }, 1200); // Gives the user 1.2s to read "CIELO" on black before revealing
+        }, 1200); 
     });
 
     // 2. High-End Scroll Observer
@@ -90,16 +86,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 6. Dynamic Scroll Nav (Capsule Effect)
+    // 6. Dynamic Scroll Nav & Pill Morphing
     const glassNav = document.querySelector('.glass-nav');
     if (glassNav) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 80) {
                 glassNav.classList.add('nav-scrolled');
-                if (conceptPill && window.innerWidth > 768) conceptPill.style.opacity = '0'; // Hide pill on scroll to keep UI clean
+                if (conceptPill) conceptPill.style.opacity = '0'; // Unlocked for mobile: Hides when scrolling
             } else {
                 glassNav.classList.remove('nav-scrolled');
-                if (conceptPill && window.innerWidth > 768) conceptPill.style.opacity = '1';
+                if (conceptPill) conceptPill.style.opacity = '1'; // Unlocked for mobile: Returns at top
             }
         });
     }
