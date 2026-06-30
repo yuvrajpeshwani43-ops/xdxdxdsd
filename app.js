@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 600);
         });
     }
-    // 6. Dynamic Mobile Nav Shrink on Scroll
+// 6. Dynamic Mobile Nav Shrink on Scroll
     const glassNav = document.querySelector('.glass-nav');
     if (glassNav) {
         window.addEventListener('scroll', () => {
