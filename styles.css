@@ -573,9 +573,41 @@ body {
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
     .layout-grid { grid-template-columns: 1fr; gap: 40px; }
-    .glass-nav { flex-direction: column; gap: 16px; border-radius: 12px; }
-    .nav-links.right { display: none; }
     
+    /* 1. Fix the Oversized Glass Nav */
+    .glass-nav { 
+        flex-direction: row; 
+        justify-content: space-between;
+        padding: 12px 20px; 
+        border-radius: 100px; /* Restores the sleek pill shape */
+        width: 95%;
+        top: 16px;
+    }
+    
+    /* Center the logo perfectly */
+    .logo { 
+        font-size: 1.2rem; 
+        letter-spacing: 0.1em; 
+        position: absolute; 
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Keep only primary links to save space */
+    .nav-links { display: flex; align-items: center; }
+    .nav-links a { margin-right: 0; font-size: 0.75rem; }
+    .nav-links a:not(:first-child) { display: none; } /* Shows only 'MENU' */
+    
+    .nav-links.right { display: flex; }
+    .nav-links.right a:not(.btn-primary) { display: none; } /* Shows only 'RESERVE' */
+    
+    /* 2. Clean up Hero Section for Mobile */
+    .hero-title { font-size: 3.5rem; }
+    .floating-badge { 
+        display: none; /* Hides the bulky badge on small screens for a cleaner photo */
+    }
+    
+    /* Rest of the existing mobile layout styles */
     .menu-tabs { gap: 16px; flex-wrap: wrap; }
     .menu-item-desc { max-width: 100%; }
     
