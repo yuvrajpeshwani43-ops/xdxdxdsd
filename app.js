@@ -98,4 +98,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 600);
         });
     }
+    // 6. Dynamic Mobile Nav Shrink on Scroll
+    const glassNav = document.querySelector('.glass-nav');
+    if (glassNav) {
+        window.addEventListener('scroll', () => {
+            // If the user scrolls down more than 50 pixels, apply the capsule state
+            if (window.scrollY > 50) {
+                glassNav.classList.add('nav-scrolled');
+            } else {
+                // If they scroll back to the absolute top, expand the menu again
+                glassNav.classList.remove('nav-scrolled');
+            }
+        });
+    }
 });
