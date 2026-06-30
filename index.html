@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CIELO | Elevated Mediterranean</title>
+    <title>CIELO | Design Concept</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- Subtle Portfolio Pill -->
+    <div class="concept-pill">Design Concept</div>
+
+    <!-- Elevated Cinematic Preloader -->
     <div class="preloader" id="preloader">
-        <h1 class="preloader-text">CIELO</h1>
+        <div class="preloader-overflow">
+            <h1 class="preloader-text">CIELO</h1>
+        </div>
     </div>
 
     <!-- Glassmorphic Navigation -->
     <nav class="glass-nav">
         <div class="nav-links">
-            <a href="#menu">Menu</a>
-            <a href="#ambience">Ambience</a>
+            <a href="#menu" class="hover-line">Menu</a>
+            <a href="#ambience" class="hover-line">Ambience</a>
         </div>
         <div class="logo">CIELO</div>
         <div class="nav-links right">
@@ -27,61 +34,39 @@
         </div>
     </nav>
 
+    <!-- Cinematic Hero -->
     <header class="hero">
-        <div class="hero-image-wrapper">
-            </div>
+        <div class="hero-image-wrapper"></div>
         <div class="hero-content">
-            <h1 class="hero-title reveal-text">Taste the<br>Horizon.</h1>
-            <p class="hero-subtitle reveal-text delay-1">Elevated Mediterranean dining above the city.</p>
+            <div class="overflow-hide"><h1 class="hero-title reveal-up">Taste the</h1></div>
+            <div class="overflow-hide"><h1 class="hero-title reveal-up delay-1">Horizon.</h1></div>
+            <p class="hero-subtitle fade-in delay-2">Elevated Mediterranean dining above the city.</p>
         </div>
-        
-        <div class="floating-badge reveal-text delay-2">
-            <span>Now taking reservations for the Summer Solstice.</span>
+        <div class="scroll-indicator fade-in delay-3">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </header>
 
+    <!-- Editorial Section -->
     <section class="editorial-section">
         <div class="container layout-grid">
             <div class="editorial-text fade-up">
                 <h2 class="section-title">A modern ode to coastal traditions.</h2>
                 <p class="body-text">We source our ingredients from sun-drenched valleys and wild coastlines, bringing the rustic soul of the Mediterranean to an elevated rooftop setting. Every dish is a dialogue between earth, fire, and sea.</p>
-                <a href="#discover" class="link-hover">Discover our culinary philosophy</a>
+                <a href="#menu" class="link-hover">Discover our culinary philosophy</a>
             </div>
             <div class="editorial-image-wrapper fade-up delay-1">
                 <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1000&auto=format&fit=crop" alt="Culinary Art" class="parallax-img">
             </div>
         </div>
     </section>
-<section id="ambience" class="gallery-section">
-        <div class="container">
-            <div class="gallery-header fade-up">
-                <h2 class="section-title">Atmosphere & Artistry.</h2>
-                <p class="body-text">Where the Mediterranean spirit meets the skyline.</p>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item large fade-up delay-1">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" alt="The Main Dining Room" class="parallax-img">
-                    <div class="gallery-caption">The Main Dining Room</div>
-                </div>
-                
-                <div class="gallery-item tall fade-up delay-2">
-                    <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=800&auto=format&fit=crop" alt="Signature Dish" class="parallax-img">
-                    <div class="gallery-caption">Culinary Artistry</div>
-                </div>
-                
-                <div class="gallery-item wide fade-up delay-1">
-                    <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=1600&q=80" alt="Sunset View" class="parallax-img">
-                    <div class="gallery-caption">Golden Hour on the Terrace</div>
-                </div>
-            </div>
-        </div>
-    </section>
-<section id="menu" class="menu-section">
+
+    <!-- Interactive Menu Section -->
+    <section id="menu" class="menu-section">
         <div class="container">
             <div class="menu-header fade-up">
                 <h2 class="section-title">The Tasting Experience</h2>
-                
                 <div class="menu-tabs">
                     <button class="tab-btn active" data-target="bites">Small Bites</button>
                     <button class="tab-btn" data-target="mains">From the Fire</button>
@@ -90,6 +75,7 @@
             </div>
 
             <div class="menu-content fade-up delay-1">
+                <!-- Panel 1: Bites -->
                 <div class="menu-panel active" id="bites">
                     <div class="menu-item">
                         <div class="menu-item-header">
@@ -105,15 +91,9 @@
                         </div>
                         <p class="menu-item-desc">White balsamic reduction, basil oil, toasted sourdough crisps, sea salt.</p>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3>Wagyu Beef Tartare</h3>
-                            <span class="price">32</span>
-                        </div>
-                        <p class="menu-item-desc">Cured egg yolk, black truffle shavings, shallot, house-made brioche.</p>
-                    </div>
                 </div>
 
+                <!-- Panel 2: Mains -->
                 <div class="menu-panel" id="mains">
                     <div class="menu-item">
                         <div class="menu-item-header">
@@ -131,6 +111,7 @@
                     </div>
                 </div>
 
+                <!-- Panel 3: Drinks -->
                 <div class="menu-panel" id="drinks">
                     <div class="menu-item">
                         <div class="menu-item-header">
@@ -139,20 +120,38 @@
                         </div>
                         <p class="menu-item-desc">Mastiha, prosecco, fresh cucumber, mint, sparkling water.</p>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-item-header">
-                            <h3>Midnight Fig</h3>
-                            <span class="price">20</span>
-                        </div>
-                        <p class="menu-item-desc">Bourbon, caramelized fig syrup, black walnut bitters, smoked thyme.</p>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
-<section id="reserve" class="reserve-section">
-        <div class="container layout-grid">
+
+    <!-- Atmosphere & Gallery Section -->
+    <section id="ambience" class="gallery-section">
+        <div class="container">
+            <div class="gallery-header fade-up">
+                <h2 class="section-title">Atmosphere & Artistry.</h2>
+            </div>
             
+            <div class="gallery-grid">
+                <div class="gallery-item large fade-up delay-1">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200&auto=format&fit=crop" alt="The Main Dining Room" class="parallax-img">
+                    <div class="gallery-caption">The Main Dining Room</div>
+                </div>
+                <div class="gallery-item tall fade-up delay-2">
+                    <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=800&auto=format&fit=crop" alt="Signature Dish" class="parallax-img">
+                    <div class="gallery-caption">Culinary Artistry</div>
+                </div>
+                <div class="gallery-item wide fade-up delay-1">
+                    <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=1600&q=80" alt="Sunset View" class="parallax-img">
+                    <div class="gallery-caption">Golden Hour on the Terrace</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reserve" class="reserve-section">
+        <div class="container layout-grid">
             <div class="reserve-content fade-up">
                 <h2 class="section-title">Secure your table.</h2>
                 <p class="body-text">Join us at the summit. For parties larger than six or special private dining requests, please contact our concierge directly.</p>
@@ -182,75 +181,63 @@
                             </select>
                         </div>
                     </div>
-                    
                     <div class="form-row">
                         <div class="input-group full-width">
                             <label for="name">Name</label>
                             <input type="text" id="name" placeholder="e.g. Alexander Pierce" required>
                         </div>
                     </div>
-                    
                     <div class="form-row">
                         <div class="input-group full-width">
                             <label for="email">Email</label>
                             <input type="email" id="email" placeholder="alexander@example.com" required>
                         </div>
                     </div>
-
                     <button type="submit" class="btn-submit">Request Booking</button>
                 </form>
 
                 <div id="reserve-success" class="reserve-success hidden">
-                    <h3 class="success-title">Your table awaits.</h3>
-                    <p class="body-text">We have received your request. A formal confirmation has been sent to your email. We look forward to hosting you above the city.</p>
+                    <h3 class="success-title">Request received.</h3>
+                    <p class="body-text">Concept reservation flow demonstration completed successfully. No actual booking has been made.</p>
                 </div>
             </div>
 
             <div class="reserve-image-wrapper fade-up delay-1">
                 <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=1000&auto=format&fit=crop" alt="Pouring Wine" class="parallax-img">
-                
-                <div class="glass-contact-card">
-                    <p class="contact-title">CIELO</p>
-                    <p>100 Ascend Blvd, Penthouse<br>Complimentary Valet</p>
-                </div>
             </div>
-
         </div>
     </section>
-<footer class="premium-footer">
+
+    <!-- Premium Footer -->
+    <footer class="premium-footer">
         <div class="container footer-grid fade-up">
-            
             <div class="footer-brand">
                 <h2 class="footer-logo">CIELO</h2>
                 <p class="footer-tagline">Elevated dining above the skyline.</p>
             </div>
-            
             <div class="footer-links">
                 <div class="link-column">
                     <h4>Explore</h4>
-                    <a href="#menu">Menu</a>
-                    <a href="#ambience">Ambience</a>
+                    <a href="#menu" class="hover-line">Menu</a>
+                    <a href="#ambience" class="hover-line">Ambience</a>
                 </div>
                 <div class="link-column">
                     <h4>Connect</h4>
-                    <a href="#reserve">Reservations</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Contact</a>
+                    <a href="#reserve" class="hover-line">Reservations</a>
+                    <a href="#" class="hover-line">Instagram (Placeholder)</a>
+                    <a href="#" class="hover-line">Contact</a>
                 </div>
                 <div class="link-column">
                     <h4>Visit</h4>
-                    <p>100 Ascend Blvd,<br>Penthouse Level</p>
+                    <p>Concept Location,<br>Mediterranean Inspired</p>
                     <p>Mon-Sun<br>5:00 PM — Late</p>
                 </div>
             </div>
         </div>
         
         <div class="footer-bottom fade-up delay-1">
-            <p>&copy; 2026 CIELO Rooftop. All rights reserved.</p>
-            <div class="footer-legal">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
+            <p>&copy; 2026 Design Concept</p>
+            <p class="footer-disclaimer">Concept website created for portfolio purposes. Brand, imagery and content are used as placeholders to demonstrate design capabilities.</p>
         </div>
     </footer>
 
